@@ -1,7 +1,9 @@
 {
     "name": "IsolarvGAS.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:04d92c0da05aceb4c98be454729e1acc"
+    ],
     "includePlatforms": [
         "Editor"
     ],
