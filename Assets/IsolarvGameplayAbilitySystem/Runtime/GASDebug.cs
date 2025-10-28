@@ -11,13 +11,10 @@ namespace IsolarvGAS.Runtime
             {
                 if (_packageSettings == null)
                 {
-                    _packageSettings = Resources.Load<PackageSettings>("Package Settings");
                     if (_packageSettings == null)
-                    {
-                        Debug.LogWarning("Package Settings asset not found in Resources folder. Using default settings.");
-                        _packageSettings = ScriptableObject.CreateInstance<PackageSettings>();
-                    }
+                        _packageSettings = RuntimeUtils.Settings;
                 }
+
                 return _packageSettings;
             }
         }
