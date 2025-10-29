@@ -97,7 +97,15 @@ namespace IsolarvGAS.Editor
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Charges Usages Info", LabelStyle);
 
+            var inputTypeProperty = serializedObject.FindProperty("inputType");
+            var inputTypeEnum = (BaseAbilityData.EAbilityInputType)inputTypeProperty.enumValueIndex;
+
             DrawProperty("chargeUsageOnCast");
+            if (inputTypeEnum == BaseAbilityData.EAbilityInputType.Hold)
+            {
+                DrawProperty("chargeUsageOnHoldPerSecond");
+            }
+
             DrawProperty("restoreChargesPerSecond");
             DrawProperty("maxCharges");
         }
@@ -109,12 +117,6 @@ namespace IsolarvGAS.Editor
 
             var inputTypeProperty = serializedObject.FindProperty("inputType");
             DrawProperty(inputTypeProperty);
-
-            var inputTypeEnum = (BaseAbilityData.EAbilityInputType)inputTypeProperty.enumValueIndex;
-            if (inputTypeEnum == BaseAbilityData.EAbilityInputType.Hold)
-            {
-                DrawProperty("usageOnHoldPerSecond");
-            }
         }
 
         void DrawVisualEffectsGUI()

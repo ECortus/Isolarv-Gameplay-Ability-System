@@ -43,12 +43,25 @@ namespace IsolarvGAS.Runtime
         #region Charges Usages Info
 
         [SerializeField] private float chargeUsageOnCast = 1f;
+        [SerializeField] private float chargeUsageOnHoldPerSecond = 0.1f;
+
         [SerializeField] private float restoreChargesPerSecond = 1f;
         [SerializeField] private float maxCharges = 3f;
 
         public float ChargeUsageOnCast => chargeUsageOnCast;
         public float RestoreChargesPerSecond => restoreChargesPerSecond;
         public float MaxCharges => maxCharges;
+
+        public float ChargeUsageOnHoldPerSecond
+        {
+            get
+            {
+                if (inputType == EAbilityInputType.Hold)
+                    return chargeUsageOnHoldPerSecond;
+
+                return 0f;
+            }
+        }
 
         #endregion
 
@@ -63,18 +76,6 @@ namespace IsolarvGAS.Runtime
 
         [SerializeField] private EAbilityInputType inputType = EAbilityInputType.Instant;
         public EAbilityInputType InputType => inputType;
-
-        [SerializeField] private float usageOnHoldPerSecond = 0.1f;
-        public float UsageOnHoldPerSecond
-        {
-            get
-            {
-                if (inputType == EAbilityInputType.Hold)
-                    return usageOnHoldPerSecond;
-
-                return 0f;
-            }
-        }
 
         #endregion
 
