@@ -73,7 +73,7 @@ namespace IsolarvGAS.Editor
         void DrawAffectInfoGUI()
         {
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Affect Info", LabelStyle);
+            EditorGUILayout.LabelField("Base Affect Info", LabelStyle);
 
             var affectOnRadiusProperty = serializedObject.FindProperty("affectOnRadius");
             DrawProperty(affectOnRadiusProperty);
@@ -83,10 +83,12 @@ namespace IsolarvGAS.Editor
                 DrawProperty("radiusOfAffect");
             }
 
+            EditorGUILayout.Space(5);
             DrawProperty("affectAtSelf");
             DrawProperty("affectAtAllies");
             DrawProperty("affectAtEnemies");
 
+            EditorGUILayout.Space(5);
             DrawProperty("affectableLayers");
         }
 

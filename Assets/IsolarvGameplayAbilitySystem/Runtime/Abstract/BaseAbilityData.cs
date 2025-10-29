@@ -20,7 +20,7 @@ namespace IsolarvGAS.Runtime
 
         #endregion
 
-        #region Affect Info
+        #region Base Affect Info
 
         [SerializeField] private bool affectOnRadius = false;
         [SerializeField] private float radiusOfAffect = 5f;

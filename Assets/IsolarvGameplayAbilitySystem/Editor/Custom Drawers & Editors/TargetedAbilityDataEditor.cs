@@ -4,12 +4,15 @@ using UnityEditor;
 namespace IsolarvGAS.Editor
 {
     [CustomEditor(typeof(TargetedAbilityData), true)]
-    public class TargetedAbilityDataEditor : BaseAbilityDataEditor
+    public class TargetedAbilityDataEditor : PointedAbilityDataEditor
     {
         protected override void DrawGUI()
         {
             DrawActorGUI();
+
+            DrawPointedAbilityGUI();
             DrawTargetedAbilityGUI();
+
             DrawBaseAbilityInfoGUI();
         }
 
@@ -17,7 +20,18 @@ namespace IsolarvGAS.Editor
         {
             EditorGUILayout.LabelField("Targeted Ability Info", LabelStyle);
 
-            // Add custom GUI elements for TargetedAbilityData here
+            if (pointedAbilityTypeProperty.enumValueIndex == (int)PointedAbilityData.EPointedAbilityType.Projectile)
+            {
+                DrawProperty("projectileFollowsTarget");
+            }
+            else if (pointedAbilityTypeProperty.enumValueIndex == (int)PointedAbilityData.EPointedAbilityType.Instant)
+            {
+                EditorGUILayout.LabelField("No additional properties for Instant targeted abilities.");
+            }
+            else
+            {
+                throw new System.NotImplementedException("Unhandled Pointed Ability Type in TargetedAbilityDataEditor.");
+            }
         }
     }
 }

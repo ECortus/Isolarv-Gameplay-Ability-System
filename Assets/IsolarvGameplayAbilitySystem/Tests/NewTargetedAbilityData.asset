@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityName: NewTargetedAbilityData
   icon: {fileID: 0}
   description: 
-  affectOnRadius: 0
+  affectOnRadius: 1
   radiusOfAffect: 5
   affectAtSelf: 0
   affectAtAllies: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   chargeUsageOnCast: 1
   restoreChargesPerSecond: 1
   maxCharges: 3
-  inputType: 0
+  inputType: 1
   usageOnHoldPerSecond: 0.1
   onPreCastVFX: {fileID: 0}
   onCastVFX: {fileID: 0}
@@ -35,3 +35,10 @@ MonoBehaviour:
   onPreCastSFX: {fileID: 0}
   onCastSFX: {fileID: 0}
   onImpactSFX: {fileID: 0}
+  pointedAbilityType: 1
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  projectileIsOneHit: 0
+  projectileAffectsOnRadius: 0
+  projectileRadiusOfAffect: 5
+  projectileFollowsTarget: 0

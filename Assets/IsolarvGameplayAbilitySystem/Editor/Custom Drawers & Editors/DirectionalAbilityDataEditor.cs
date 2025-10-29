@@ -17,7 +17,33 @@ namespace IsolarvGAS.Editor
         {
             EditorGUILayout.LabelField("Directional Ability Info", LabelStyle);
 
-            // Add custom GUI elements for DirectionalAbilityData here
+            var directionalAbilityTypeProperty = serializedObject.FindProperty("directionalAbilityType");
+            DrawProperty(directionalAbilityTypeProperty);
+
+            if (directionalAbilityTypeProperty.enumValueIndex == (int)DirectionalAbilityData.EDirectionalAbilityType.Projectile)
+            {
+                EditorGUILayout.Space(5);
+
+                DrawProperty("projectilePrefab");
+                DrawProperty("projectileSpeed");
+                DrawProperty("projectileFlyingDistance");
+                DrawProperty("projectileIsOneHit");
+                DrawProperty("projectileAffectsOnRadius");
+                DrawProperty("projectileRadiusOfAffect");
+            }
+            else if (directionalAbilityTypeProperty.enumValueIndex == (int)DirectionalAbilityData.EDirectionalAbilityType.Ray)
+            {
+                EditorGUILayout.Space(5);
+
+                DrawProperty("rayPrefab");
+                DrawProperty("raySpeed");
+                DrawProperty("rayLength");
+                DrawProperty("rayWidth");
+            }
+            else
+            {
+                throw new System.NotImplementedException("Unhandled Directional Ability Type in DirectionalAbilityDataEditor.");
+            }
         }
     }
 }

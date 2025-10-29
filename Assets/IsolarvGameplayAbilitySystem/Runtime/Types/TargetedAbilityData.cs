@@ -3,11 +3,12 @@ using UnityEngine;
 namespace IsolarvGAS.Runtime
 {
     [CreateAssetMenu(fileName = "NewTargetedAbilityData", menuName = "Isolarv/Gameplay Ability System/Targeted Ability Data", order = 2)]
-    public class TargetedAbilityData : BaseAbilityData
+    public class TargetedAbilityData : PointedAbilityData
     {
-        #region Targeted Ability Info
+        #region Targeted Ability Info  
 
-        // Add any specific properties or methods for TargetedAbilityData here
+        [SerializeField] private bool projectileFollowsTarget = false;
+        public bool ProjectileFollowsTarget => projectileFollowsTarget;
 
         #endregion
     }

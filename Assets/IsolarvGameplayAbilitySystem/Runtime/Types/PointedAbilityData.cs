@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace IsolarvGAS.Runtime
@@ -7,7 +8,28 @@ namespace IsolarvGAS.Runtime
     {
         #region Pointed Ability Info
 
-        // Add any specific properties or methods for PointedAbilityData here
+        [Serializable]
+        public enum EPointedAbilityType
+        {
+            Instant,
+            Projectile
+        }
+
+        [SerializeField] private EPointedAbilityType pointedAbilityType = EPointedAbilityType.Instant;
+
+        [SerializeField] private AbilityProjectile projectilePrefab;
+        [SerializeField] private float projectileSpeed = 10f;
+        [SerializeField] private bool projectileIsOneHit = false;
+        [SerializeField] private bool projectileAffectsOnRadius = false;
+        [SerializeField] private float projectileRadiusOfAffect = 5f;
+
+        public EPointedAbilityType PointedAbilityType => pointedAbilityType;
+
+        public AbilityProjectile ProjectilePrefab => projectilePrefab;
+        public float ProjectileSpeed => projectileSpeed;
+        public bool ProjectileIsOneHit => projectileIsOneHit;
+        public bool ProjectileAffectsOnRadius => projectileAffectsOnRadius;
+        public float ProjectileRadiusOfAffect => projectileRadiusOfAffect;
 
         #endregion
     }

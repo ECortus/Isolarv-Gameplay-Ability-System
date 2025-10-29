@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7875873126e551844a392c1239ccf517, type: 3}
   m_Name: NewPointedAbilityData
   m_EditorClassIdentifier: 
-  id: 
-  abilityName: 
+  id: id_newpointedabilitydata
+  abilityName: NewPointedAbilityData
   icon: {fileID: 0}
   description: 
+  affectOnRadius: 0
+  radiusOfAffect: 5
+  affectAtSelf: 0
+  affectAtAllies: 0
+  affectAtEnemies: 1
+  affectableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   chargeUsageOnCast: 1
   restoreChargesPerSecond: 1
   maxCharges: 3
@@ -27,3 +35,9 @@ MonoBehaviour:
   onPreCastSFX: {fileID: 0}
   onCastSFX: {fileID: 0}
   onImpactSFX: {fileID: 0}
+  pointedAbilityType: 1
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  projectileIsOneHit: 0
+  projectileAffectsOnRadius: 0
+  projectileRadiusOfAffect: 5
